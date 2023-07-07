@@ -10,14 +10,14 @@ const platform = ref('')
 onMounted( () => {
     ElectronAPI.demo().then( res => {
         platform.value = res
-    })  
+    })
 })
 </script>
 
 <template>
   <h1>{{ msg }}12211212</h1>
   <p>{{  platform  }}</p>
-  <div class="card">
+  <div class="card flex-center">
     <button type="button" @click="count++">count is {{ count }}</button>
     <p>
       Edit
@@ -39,7 +39,7 @@ onMounted( () => {
   <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .read-the-docs {
   color: #888;
 }

@@ -1,6 +1,7 @@
 import { app, BrowserWindow, shell, ipcMain } from "electron";
 import { release } from "node:os";
 import { join } from "node:path";
+import "./ipcMainHandles";
 import fs from "node:fs";
 // The built directory structure
 //
@@ -44,6 +45,8 @@ async function createWindow() {
   win = new BrowserWindow({
     title: "Main window",
     icon: join(process.env.PUBLIC, "favicon.ico"),
+    width: 1400,
+    height: 800,
     webPreferences: {
       preload,
       // Warning: Enable nodeIntegration and disable contextIsolation is not secure in production
@@ -115,9 +118,4 @@ ipcMain.handle("open-win", (_, arg) => {
   } else {
     childWindow.loadFile(indexHtml, { hash: arg });
   }
-});
-
-ipcMain.handle("get-files", (e, msg) => {
-  let files = fs.readdirSync("../../");
-  return files;
 });

@@ -1,14 +1,10 @@
 const { contextBridge, ipcRenderer } = require("electron");
 import fs from "node:fs";
-
-async function demo() {
-  console.log("運行demo");
-  let files = await ipcRenderer.invoke("get-files");
-  return files;
-}
+import { demo, getNavList } from "./ElectronApis";
 
 contextBridge.exposeInMainWorld("ElectronAPI", {
   demo,
+  getNavList,
 });
 // contextBridge.exposeInMainWorld("IS_ELECTRON", true);
 

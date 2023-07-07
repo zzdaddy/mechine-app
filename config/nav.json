@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "首页",
+        "path": "/home",
+        "icon": "Home"
+    },
+    {
+        "id": 2,
+        "name": "软通",
+        "path": "/work",
+        "icon": "thumb_up"
+    },
+    {
+        "id": 3,
+        "name": "设置",
+        "path": "settings",
+        "icon": "settings"
+    }
+]
